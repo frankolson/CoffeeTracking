@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri
