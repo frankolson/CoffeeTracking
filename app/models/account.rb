@@ -8,6 +8,10 @@ class Account < ApplicationRecord
                         exclusion: { in: RESTRICTED_SUBDOMAINS,  message: 'restricted' }
   before_validation :downcase_subdomain
 
+  # Associations
+  belongs_to :owner, class_name: "User"
+  accepts_nested_attributes_for :owner
+
   private
 
   def downcase_subdomain

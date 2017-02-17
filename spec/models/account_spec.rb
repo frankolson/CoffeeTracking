@@ -20,6 +20,6 @@ RSpec.describe Account, type: :model do
   end
 
   describe 'associations' do
-    it "belongs to an owner"
+    it { should belong_to :owner }
   end
 end
