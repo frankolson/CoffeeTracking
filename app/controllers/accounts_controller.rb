@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
   def create
     @account = Account.new(account_params)
     if @account.save
-      redirect_to root_path
+      redirect_to root_path, notice: "Your account was successfully created"
     else
       render :new
     end
