@@ -1,6 +1,19 @@
 <div class="col-md-10 col-lg-6 offset-md-1 offset-lg-3 card card-block">
   <h2>Sign up for Coffee Tracker</h2>
   <%= simple_form_for @account do |f| %>
+      <%= f.simple_fields_for :owner do |owner| %>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= owner.input :first_name %>
+          </div>
+          <div class="col-sm-6">
+            <%= owner.input :last_name %>
+          </div>
+        </div>
+        <%= owner.input :email %>
+        <%= owner.input :password %>
+        <%= owner.input :password_confirmation %>
+      <% end %>
       <%= f.input :subdomain do %>
         <div class="input-group">
           <%= f.input_field :subdomain, placeholder: 'dublin', class: "form-control" %>

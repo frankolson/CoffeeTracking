@@ -10,6 +10,23 @@
 
   <body>
 
+    <header class="container">
+      <nav class="navbar fixed-top navbar-light bg-faded">
+        <div class="container">
+          <%= link_to 'Coffee Tracker', root_path, class: 'navbar-brand' %>
+          <% if user_signed_in? %>
+            <div class="float-sm-right right-buttons">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
+            </div>
+          <% else %>
+            <div class="float-sm-right right-buttons">
+              <%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn" %>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
     <div class="container">
       <%= flash_messages %>
 
